@@ -30,3 +30,13 @@ console.log(favouriteFruits[favouriteFruits.length -1]);
 for (var i = 0; i < favouriteFruits.length; i++) {
     console.log(favouriteFruits[i]);
 }
+
+// Zadanie 3
+
+var tab = [1,2,3,4]
+function printTable(array) {
+    for(var i=0; i<array.length; i++) {
+        console.log(array[i]);
+    }
+}
+printTable(tab);
