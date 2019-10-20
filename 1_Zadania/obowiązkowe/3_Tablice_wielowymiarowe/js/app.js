@@ -32,3 +32,7 @@ checkArray([
     [0, 0],
     [1, 34],
 ]);
+
+// Zadanie 1
+
+console.log(task1Array[3][2]);
