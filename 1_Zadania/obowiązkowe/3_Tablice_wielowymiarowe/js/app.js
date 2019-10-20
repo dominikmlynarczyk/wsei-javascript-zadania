@@ -56,3 +56,25 @@ for (let i = 0; i < task2Array.length; i++) {
         console.log(task2Array[i][j]);
     }
 }
+
+// Zadanie 3
+
+function print2DArray(task2Array) {
+    for (let i = 0; i < task2Array.length; i++) {
+        for (let j = 0; j < task2Array[i].length; j++) {
+            console.log(task2Array[i][j]);
+        }
+    }
+}
+
+print2DArray([[1,2], [3,4]]);
+
+// Zadanie 4
+
+var task3Array = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+
+print2DArray(task3Array);
