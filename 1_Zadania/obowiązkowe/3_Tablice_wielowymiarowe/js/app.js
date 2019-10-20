@@ -36,3 +36,23 @@ checkArray([
 // Zadanie 1
 
 console.log(task1Array[3][2]);
+
+console.log(task1Array[1].length);
+
+console.log(task1Array[4][2]);
+
+// Zadanie 2
+
+for (let i = 0; i < task2Array.length; i++) {
+    console.log(task2Array[i]);
+}
+
+for (let i = 0; i < task2Array.length; i++) {
+    console.log(task2Array[i].length);
+}
+
+for (let i = 0; i < task2Array.length; i++) {
+    for (let j = 0; j < task2Array[i].length; j++) {
+        console.log(task2Array[i][j]);
+    }
+}
