@@ -21,3 +21,11 @@ Robot.prototype.fixIt = function () {
     this.isFunctional = true;
     console.log("Robot " + this.name + "was fixed");
 };
+
+
+// Zadanie 1
+
+var robot = new Robot("Leszek");
+robot.sayHi("Andrzej");
+robot.changeName("Grzesiek");
+fixIt();

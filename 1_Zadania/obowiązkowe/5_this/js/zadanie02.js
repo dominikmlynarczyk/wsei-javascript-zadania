@@ -2,7 +2,8 @@ var calculator = {
     save: function (newA, newB) {
         this.a = newA;
         this.b = newB;
-    }
+    },
+    sum: function (new)
 
 };
 
