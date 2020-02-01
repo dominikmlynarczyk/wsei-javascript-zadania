@@ -1,6 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
-    /*
-    Poniżej napisz kod rozwiązujący zadania. Odpowiedzi oddzielaj komentarzami.
-     */
+document.addEventListener('DOMContentLoaded', function() {
+	// Zadanie 0
+	function getDataAnimation(element) {
+		// const dataValue = element.getA;
+	}
 
+	const element = document.querySelector('.title');
+	element.getAttribute('data-animation');
+	getDataAnimation(element);
 });
