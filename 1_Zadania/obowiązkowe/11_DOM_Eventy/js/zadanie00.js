@@ -1,11 +1,24 @@
-const parentElement = document.querySelector('.parent');
+document.addEventListener('DOMContentLoaded', () => {
+	const parentElement = document.querySelectorAll('.parent');
 
-parentElement.forEach((el) => {
-    el.addEventListener('mouseover', () => {
-        el.firstChildElement.style.display = "block";
-    })
+	// Zadanie 0a
 
-    el.addEventListener('mouseleave', () => {
-        el.firstChildElement.style.display = "none";
-    })
-})
+	parentElement.forEach((el) => {
+		el.addEventListener('mouseover', () => {
+			el.firstElementChild.style.display = 'block';
+		});
+
+		// KOD ZAKOMENTOWANY ABY ZADANIE 0b MOGŁO DZIAŁAĆ!!!
+		// el.addEventListener('mouseleave', () => {
+		// 	el.firstElementChild.style.display = 'none';
+		// });
+
+		// Zadanie 0b
+		el.addEventListener('mouseleave', hideChildrenElement);
+	});
+
+	// Zadanie 0b
+	function hideChildrenElement() {
+		this.firstElementChild.style.display = 'none';
+	}
+});
