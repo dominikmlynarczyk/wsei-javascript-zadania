@@ -1,87 +1,97 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var homeElement = document.getElementById("home");
-    var childElements = document.querySelector(".oferts").children;
-    var banner = document.querySelector(".ban");
-    var blocks = document.querySelectorAll(".block");
-    var links = document.querySelector(".links").children;
-    // Zadanie 0
-    // function getDatasInfo(elements) {
-    //     var newArray = [];
-    //     for (let i = 0; i<elements.length; i++) {
-    //         newArray.push(elements[i].getAttibute('data-color'));
-    //     }
-    //     console.log(newArray);
-    //     return NewArray
-    // }
+document.addEventListener('DOMContentLoaded', function() {
+	var homeElement = document.getElementById('home');
+	var childElements = document.querySelector('.oferts').children;
+	var banner = document.querySelector('.ban');
+	var blocks = document.querySelectorAll('.block');
+	var links = document.querySelector('.links').children;
 
-    /*
-    Poniżej napisz kod rozwiązujący zadania
-     */
-    // getDatasInfo(links);
+	// Zadanie 0
+	function getDatasInfo(elements) {
+		var newArray = [];
+		Array.from(elements).forEach((el) => {
+			newArray.push(el.getAttribute('data-color'));
+		});
+		return newArray;
+	}
 
-    // Zadanie 1
+	console.log(getDatasInfo(links));
 
+	// Zadanie 1
+	function showElement(element) {
+		if (NodeList.prototype.isPrototypeOf(element) || HTMLCollection.prototype.isPrototypeOf(element)) {
+			for (let i = 0; i < element.length; i++) {
+				console.log(`Nazwa tagu: ${element[i].tagName}`);
+				console.log(`Klasy tagu: ${element[i].className}`);
+			}
+		} else {
+			console.log(`Nazwa tagu: ${element.tagName}`);
+			console.log(`Klasy tagu: ${element.className}`);
+		}
+	}
 
+	showElement(homeElement);
+	showElement(childElements);
+	showElement(banner);
+	showElement(blocks);
+	showElement(links);
 
-    // Zadanie 2
-    for (el of blocks) {
-        console.log(el.innerHTML);
-        console.log(el.outerHTML);
-        el.innerHTML = "Nowa wartość diva o klasie blocks";
-        console.log(el.innerHTML);
-        console.log(el.outerHTML);
-    }
+	// Zadanie 2
+	for (el of blocks) {
+		// innerHTML tylko zawartość wewnątrz tagu (tekst + elementy), outerHTML zwraca zawartość wewnąrz tagu i dodatkowo sam tag
+		console.log(el.innerHTML);
+		console.log(el.outerHTML);
 
+		// Modyfikujemy zawartość wewnątrz elementów o klasie .block przez co cała zawartość (elementy <a>) zostają usunięte i w ich miejsce pojawia się powyższy tekst
+		el.innerHTML = 'Nowa wartość diva o klasie blocks';
 
-    // Zadanie 3
-    var mainFooter = document.querySelector('#mainFooter');
-    function getID(element) {
-        console.log(element.id);
-        return element.id;
-    }
+		console.log(el.innerHTML);
+		console.log(el.outerHTML);
+	}
 
-    getID(mainFooter);
+	// Zadanie 3
+	var mainFooter = document.querySelector('#mainFooter');
 
-    // Zadanie 4
+	function getID(element) {
+		return element.id;
+	}
 
-    function getTags(elements) {
-        let arr1 = [];
+	console.log(getID(mainFooter));
 
-        for (let i = 0; i < elements.length; i++) {
-            arr1.push(elements[i].tagName);
-        }
+	// Zadanie 4
+	function getTags(elements) {
+		const array = [];
 
-        console.log(arr1);
-        return arr1;
-    }
+		Array.from(elements).forEach((el) => {
+			array.push(el.tagName);
+		});
 
-    getTags(childElements);
+		return array;
+	}
 
-    // Zadanie 5
+	console.log(getTags(childElements));
 
-    function getClassInfo(elements) {
-        const newArray = [];
-        for (let i = 0; i < elements.classList.length; i++) {
-            newArray.push(elements.classList[i]);
-        }
+	// Zadanie 5
+	function getClassInfo(elements) {
+		const array = [];
+		for (let i = 0; i < elements.classList.length; i++) {
+			array.push(elements.classList[i]);
+		}
 
-        console.log(newArray);
-        return newArray;
-    }
+		return array;
+	}
 
-    getClassInfo(banner);
+	console.log(getClassInfo(banner));
 
-    // Zadanie 6
+	// Zadanie 6
+	const liElements = document.querySelectorAll('nav li');
 
-    const liElements = document.querySelectorAll('nav li');
+	function setDataDirection(elements) {
+		for (item of elements) {
+			if (!item.getAttribute('data-direction')) {
+				item.setAttribute('data-direction', 'top');
+			}
+		}
+	}
 
-    function setDataDirection(elements) {
-        for(item of elements) {
-            if(!item.getAttribute('data-direction')) {
-                item.setAttribute('data-direction', 'top');
-            }
-        }
-    }
-
-    setDataDirection(liElements);
+	setDataDirection(liElements);
 });
