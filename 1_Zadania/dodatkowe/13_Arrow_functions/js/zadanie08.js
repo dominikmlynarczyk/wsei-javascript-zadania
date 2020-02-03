@@ -1,10 +1,10 @@
 const dog = {
-    type: "Mammal",
-    name: "",
-    setName: (newName) => {
-        this.name = newName;
-    }
-}
+	type: 'Mammal',
+	name: '',
+	setName: function(newName) {
+		this.name = newName;
+	}
+};
 
-dog.setName("Reksio");
+dog.setName('Reksio');
 console.log(dog.name);
